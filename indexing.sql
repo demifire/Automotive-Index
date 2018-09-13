@@ -84,3 +84,17 @@ WHERE make_code = 'NISSAN'
 AND model_code = 'GT-R';
 -- Returned GT-R 2 ms
 
+-- Create a query to list all `make_code`, `model_code`, `model_title`, 
+-- and year from `car_models` where the `make_code` is `'LAM'`, and 
+-- note the time somewhere. (should have 1360 rows)
+
+CREATE INDEX indexMakeCodeModelCodeModelTitleYear
+ON car_models (make_code, model_code, model_title, year) 
+WHERE make_code = 'LAM';
+
+SELECT make_code, model_code, model_title, year 
+FROM car_models 
+WHERE make_code = 'LAM';
+
+-- Returned 1360 rows 6 ms
+
