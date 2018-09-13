@@ -9,10 +9,14 @@ ALTER DATABASE indexed_cars OWNER TO indexed_cars_user;
 
 -- Run the provided scripts/car_models.sql script on the indexed_cars database
 
-
+-- Completed
 
 -- Run the provided scripts/car_model_data.sql script on the indexed_cars database 10 times
 
+-- Completed
+
 -- there should be 223380 rows in car_models
+
+-- Confirmed
 
 
