@@ -49,3 +49,9 @@ FROM car_models WHERE make_code = 'LAM';
 SELECT * FROM car_models WHERE year BETWEEN 2010 AND 2015;
 -- Returned 78840 rows 228 ms
 
+-- Run a query to list all fields from all `car_models` in the 
+-- year of `2010`, and note the time somewhere (should have 13140 rows)
+
+SELECT * FROM car_models WHERE year = 2010;
+-- Returned 13140 rows 50 ms
+
