@@ -63,3 +63,24 @@ CREATE INDEX indexMakeCode
 ON car_models (make_code) 
 WHERE make_code = 'LAM';
 -- Returned Created Index 31 ms
+
+SELECT DISTINCT make_title 
+FROM car_models 
+WHERE make_code = 'LAM';
+-- Returned Lamborghini 3 ms
+
+-- Create a query to list all `model_title` values where the `make_code` 
+-- is `'NISSAN'`, and the `model_code` is `'GT-R'` without any duplicate rows, 
+-- and note the time somewhere. (should have 1 result)
+
+CREATE INDEX indexMakeCodeModelCode
+ON car_models (make_code, model_code) 
+WHERE make_code = 'NISSAN' 
+AND model_code = 'GT-R';
+	
+SELECT DISTINCT model_title 
+FROM car_models 
+WHERE make_code = 'NISSAN' 
+AND model_code = 'GT-R';
+-- Returned GT-R 2 ms
+
