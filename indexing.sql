@@ -41,3 +41,11 @@ AND model_code = 'GT-R';
 SELECT make_code, model_code, model_title, year 
 FROM car_models WHERE make_code = 'LAM';
 -- Returned 1360 rows 21 ms
+
+-- Run a query to list all fields from all `car_models` 
+-- in years between `2010` and `2015`, and note the time 
+-- somewhere (should have 78840 rows)
+
+SELECT * FROM car_models WHERE year BETWEEN 2010 AND 2015;
+-- Returned 78840 rows 228 ms
+
