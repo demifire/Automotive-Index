@@ -98,3 +98,25 @@ WHERE make_code = 'LAM';
 
 -- Returned 1360 rows 6 ms
 
+-- Create a query to list all fields from all `car_models` 
+-- in years between `2010` and `2015`, and note the 
+-- time somewhere (should have 78840 rows)
+
+CREATE INDEX indexAllFields
+ON car_models (make_code, make_title, model_code, model_title, year) 
+WHERE year BETWEEN 2010 AND 2015;
+	
+DROP INDEX indexAllFields;
+SELECT * FROM car_models WHERE year BETWEEN 2010 AND 2015;
+
+-- Returned 78840 234 ms
+
+-- Create a query to list all fields from all `car_models` in the year of `2010`, 
+-- and note the time somewhere (should have 13140 rows)
+
+CREATE INDEX indexAllFields2010
+ON car_models (make_code, make_title, model_code, model_title, year) 
+WHERE year = 2010;
+
+SELECT * FROM car_models WHERE year = 2010;
+-- Returned 43 ms
