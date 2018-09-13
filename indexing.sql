@@ -55,3 +55,11 @@ SELECT * FROM car_models WHERE year BETWEEN 2010 AND 2015;
 SELECT * FROM car_models WHERE year = 2010;
 -- Returned 13140 rows 50 ms
 
+-- Create a query to get a list of all `make_title` values from the `car_models` 
+-- table where the `make_code` is `'LAM'`, without any duplicate rows, and note 
+-- the time somewhere. (should have 1 result)
+
+CREATE INDEX indexMakeCode
+ON car_models (make_code) 
+WHERE make_code = 'LAM';
+-- Returned Created Index 31 ms
